@@ -5,7 +5,7 @@
   <asset src="www/litegap.js" target="litegap.js"/>
   <asset src="www/litegap-example.html" target="litegap-example.html"/>
   <engines>
-    <engine name="cordova" version="&gt;=2.9.0"/>
+    <engine name="cordova" version=">=2.9.0"/>
   </engines>
   <platform name="ios">
     <config-file target="config.xml" parent="/widget">
