@@ -45,7 +45,7 @@ _Note:_ use the --arc flag to the `create` command if you are planning to create
 plugman --platform ios --project ~/MyPhonegapApp --plugin https://github.com/couchbaselabs/LiteGap.git
 ```
 
-You can rename your project's `www/litegap-example.html` to `index.html` at this point to verify your installation.
+You can rename your project's `www/litegap-example.html` to `index.html` at this point to verify your installation. (The example only outputs to console.log)
 
 ## Build Project via Xcode
 
@@ -70,7 +70,7 @@ plugman --platform android --project ~/MyPhonegapApp --plugin https://github.com
 
 ```
 
-You can rename your project's `www/litegap-example.html` to `index.html` at this point to verify your installation.
+You can rename your project's `www/litegap-example.html` to `index.html` at this point to verify your installation. (The example only outputs to console.log)
 
 ## Build Project via Eclipse
 
