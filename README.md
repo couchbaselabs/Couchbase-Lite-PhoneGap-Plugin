@@ -66,7 +66,7 @@ The rest of the instructions will assume you've created your app in `~/MyPhonega
 ## Install Plugin to app
 
 ```
-plugman --platform android --project ~/MyPhonegapApp --plugin https://github.com/couchbaselabs/LiteGap.git
+plugman --platform android --project ~/MyPhonegapApp/platforms/android/ --plugin https://github.com/couchbaselabs/LiteGap.git
 
 ```
 
