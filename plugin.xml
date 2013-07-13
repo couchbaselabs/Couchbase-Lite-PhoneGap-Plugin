@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="com.couchbase.litegap" version="0.1.1">
+  <name>LiteGap</name>
+  <description>Install Couchbase Lite in your app to enable JSON sync.</description>
+  <asset src="www/litegap.js" target="litegap.js"/>
+  <asset src="www/litegap-example.html" target="litegap-example.html"/>
+  <engines>
+    <engine name="cordova" version="&gt;=2.9.0"/>
+  </engines>
+  <platform name="ios">
+    <config-file target="config.xml" parent="/widget">
+      <feature name="LiteGap">
+        <param name="ios-package" value="LiteGap"/>
+        <param name="onload" value="true"/>
+      </feature>
+    </config-file>
+    <header-file src="src/ios/LiteGap.h"/>
+    <source-file src="src/ios/LiteGap.m"/>
+    <framework src="libsqlite3.dylib"/>
+    <framework src="libstdc++.dylib"/>
+    <framework src="libicucore.dylib"/>
+    <framework src="libz.dylib"/>
+    <framework src="Security.framework"/>
+    <header-file src="lib/ios/CBLRegisterJSViewCompiler.h"/>
+    <source-file framework="true" src="lib/ios/CouchbaseLite.framework/CouchbaseLite.a"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLAttachment.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLDatabase+Attachments.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLDatabase+Insertion.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLDatabase+Internal.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLDatabase+LocalDocs.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLDatabase+Replication.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLDatabase.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLDocument.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLJSON.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLManager.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLModel.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLModelFactory.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLQuery.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLReplication.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLRevision.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLStatus.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLUITableSource.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLView+Internal.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLView.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBL_Attachment.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBL_Body.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBL_Puller.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBL_Pusher.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBL_Replicator.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBL_Revision.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBL_Router.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBL_Server.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBL_URLProtocol.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CouchbaseLite.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/MYDynamicObject.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/PrivateHeaders/CouchbaseLitePrivate.h"/>
+    <source-file framework="true" src="lib/ios/CouchbaseLiteListener.framework/CouchbaseLiteListener.a"/>
+    <header-file src="lib/ios/CouchbaseLiteListener.framework/Headers/CBLListener.h"/>
+    <header-file src="lib/ios/JavaScriptCore.framework/Headers/JSBase.h"/>
+    <header-file src="lib/ios/JavaScriptCore.framework/Headers/JSContextRef.h"/>
+    <header-file src="lib/ios/JavaScriptCore.framework/Headers/JSObjectRef.h"/>
+    <header-file src="lib/ios/JavaScriptCore.framework/Headers/JSStringRef.h"/>
+    <header-file src="lib/ios/JavaScriptCore.framework/Headers/JSStringRefCF.h"/>
+    <header-file src="lib/ios/JavaScriptCore.framework/Headers/JSValueRef.h"/>
+    <header-file src="lib/ios/JavaScriptCore.framework/Headers/JavaScript.h"/>
+    <header-file src="lib/ios/JavaScriptCore.framework/Headers/JavaScriptCore.h"/>
+    <header-file src="lib/ios/JavaScriptCore.framework/Headers/WebKitAvailability.h"/>
+    <source-file framework="true" src="lib/ios/JavaScriptCore.framework/JavaScriptCore.a"/>
+    <source-file framework="true" src="lib/ios/libCBLJSViewCompiler.a"/>
+  </platform>
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="plugins">
+      <plugin name="LiteGap" value="com.couchbase.cblite.plugins.LiteGap"/>
+    </config-file>
+    <source-file src="src/android/LiteGap.java" target-dir="src/com/couchbase/cblite/plugins"/>
+    <source-file src="lib/android/armeabi/libcom_couchbase_touchdb_TDCollateJSON.so" target-dir="libs/armeabi"/>
+    <source-file src="lib/android/cblite-ektorp.jar" target-dir="libs"/>
+    <source-file src="lib/android/cblite-javascript.jar" target-dir="libs"/>
+    <source-file src="lib/android/cblite-listener.jar" target-dir="libs"/>
+    <source-file src="lib/android/cblite.jar" target-dir="libs"/>
+    <source-file src="lib/android/commons-io-2.0.1.jar" target-dir="libs"/>
+    <source-file src="lib/android/jackson-core-asl-1.9.2.jar" target-dir="libs"/>
+    <source-file src="lib/android/jackson-mapper-asl-1.9.2.jar" target-dir="libs"/>
+    <source-file src="lib/android/mips/libcom_couchbase_touchdb_TDCollateJSON.so" target-dir="libs/mips"/>
+    <source-file src="lib/android/org.ektorp-1.2.3.jar" target-dir="libs"/>
+    <source-file src="lib/android/org.ektorp.android-1.2.3.jar" target-dir="libs"/>
+    <source-file src="lib/android/rhino-1.7R3.jar" target-dir="libs"/>
+    <source-file src="lib/android/servlet-api-2.4.jar" target-dir="libs"/>
+    <source-file src="lib/android/slf4j-api-1.6.1.jar" target-dir="libs"/>
+    <source-file src="lib/android/slf4j-jdk14-1.6.1.jar" target-dir="libs"/>
+    <source-file src="lib/android/webserver.jar" target-dir="libs"/>
+    <source-file src="lib/android/x86/libcom_couchbase_touchdb_TDCollateJSON.so" target-dir="libs/x86"/>
+  </platform>
+</plugin>
