@@ -7,6 +7,7 @@
   <engines>
     <engine name="cordova" version=">=2.9.0"/>
   </engines>
+  <license>Apache 2.0</license>
   <platform name="ios">
     <config-file target="config.xml" parent="/widget">
       <feature name="LiteGap">
