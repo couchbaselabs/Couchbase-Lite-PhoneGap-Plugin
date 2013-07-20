@@ -70,8 +70,10 @@
     <source-file framework="true" src="lib/ios/libCBLJSViewCompiler.a"/>
   </platform>
   <platform name="android">
-    <config-file target="res/xml/config.xml" parent="plugins">
-      <plugin name="LiteGap" value="com.couchbase.cblite.plugins.LiteGap"/>
+    <config-file target="res/xml/config.xml" parent="/*">
+        <feature name="LiteGap">
+            <param name="android-package" value="com.couchbase.cblite.plugins.LiteGap" />
+        </feature>
     </config-file>
     <source-file src="src/android/LiteGap.java" target-dir="src/com/couchbase/cblite/plugins"/>
     <source-file src="lib/android/armeabi/libcom_couchbase_touchdb_TDCollateJSON.so" target-dir="libs/armeabi"/>
