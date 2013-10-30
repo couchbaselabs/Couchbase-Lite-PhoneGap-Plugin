@@ -8,7 +8,7 @@
   </js-module>
   <asset src="www/litegap-example.html" target="litegap-example.html"/>
   <engines>
-    <engine name="cordova" version="3.0.0"/>
+    <engine name="cordova" version=">=3.0.0"/>
   </engines>
   <platform name="ios">
     <config-file target="config.xml" parent="/widget">
@@ -24,6 +24,7 @@
     <framework src="libicucore.dylib"/>
     <framework src="libz.dylib"/>
     <framework src="Security.framework"/>
+    <framework src="CFNetwork.framework"/>
     <header-file src="lib/ios/CBLRegisterJSViewCompiler.h"/>
     <source-file framework="true" src="lib/ios/CouchbaseLite.framework/CouchbaseLite.a"/>
     <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLAttachment.h"/>
