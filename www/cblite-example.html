@@ -3,7 +3,6 @@
 <head>
 <title>Cordova</title>
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-<script type="text/javascript" charset="utf-8" src="cblite.js"></script>
 <script type="text/javascript" charset="utf-8">
 
     // Call onDeviceReady when PhoneGap is loaded.
@@ -17,22 +16,25 @@
     // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
     function onDeviceReady() {
         // Now safe to use the PhoneGap API
-        console.log("onDeviceReady() called")
+        logMessage("onDeviceReady() called, getting Couchbase Lite URL")
         if (window.cblite) {
             window.cblite.getURL(function(err, url) {
                 if (err) {
-                    console.log("error launching: " + err)
+                    logMessage("error launching Couchbase Lite: " + err)
                 } else {
-                    var message = "Couchbase Lite running at " + url;
-                    var p = document.createElement("p");
-                    p.innerHTML = message;
-                    document.body.appendChild(p)
-                    console.log(message)
+                    logMessage("Couchbase Lite running at " + url);
                 }
             });
         } else {
-            console.log("cblite plugin not installed.")
+            logMessage("error, Couchbase Lite plugin not found.")
         }
+    }
+
+    function logMessage(message) {
+        var p = document.createElement("p");
+        p.innerHTML = message;
+        document.body.appendChild(p)
+        console.log(message)
     }
 
 </script>
@@ -40,9 +42,7 @@
 
 </head>
 <body>
-<h1>Hello World, Phonegap..</h1>
-
-Check the logs and you should see things have happened..
+<h1>Hello Couchbase Lite</h1>
 
 </body>
 </html>

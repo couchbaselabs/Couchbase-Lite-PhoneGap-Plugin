@@ -6,7 +6,7 @@
   <js-module src="www/cblite.js" name="CouchbaseLite">
     <clobbers target="window.cblite"/>
   </js-module>
-  <asset src="www/litegap-example.html" target="litegap-example.html"/>
+  <asset src="www/cblite-example.html" target="cblite-example.html"/>
   <engines>
     <engine name="cordova" version=">=3.0.0"/>
   </engines>
@@ -25,8 +25,12 @@
     <framework src="libz.dylib"/>
     <framework src="Security.framework"/>
     <framework src="CFNetwork.framework"/>
+    <framework src="SystemConfiguration.framework"/>
     <header-file src="lib/ios/CBLRegisterJSViewCompiler.h"/>
+    <source-file framework="true" src="lib/ios/libCBLJSViewCompiler.a"/>
     <source-file framework="true" src="lib/ios/CouchbaseLite.framework/CouchbaseLite.a"/>
+    <source-file framework="true" src="lib/ios/CouchbaseLiteListener.framework/CouchbaseLiteListener.a"/>
+    <source-file framework="true" src="lib/ios/JavaScriptCore.framework/JavaScriptCore.a"/>
     <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLAttachment.h"/>
     <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLDatabase.h"/>
     <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLDocument.h"/>
@@ -41,7 +45,6 @@
     <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLView.h"/>
     <header-file src="lib/ios/CouchbaseLite.framework/Headers/CouchbaseLite.h"/>
     <header-file src="lib/ios/CouchbaseLite.framework/Headers/MYDynamicObject.h"/>
-    <source-file framework="true" src="lib/ios/CouchbaseLiteListener.framework/CouchbaseLiteListener.a"/>
     <header-file src="lib/ios/CouchbaseLiteListener.framework/Headers/CBLListener.h"/>
     <header-file src="lib/ios/JavaScriptCore.framework/Headers/JSBase.h"/>
     <header-file src="lib/ios/JavaScriptCore.framework/Headers/JSContextRef.h"/>
@@ -52,8 +55,6 @@
     <header-file src="lib/ios/JavaScriptCore.framework/Headers/JavaScript.h"/>
     <header-file src="lib/ios/JavaScriptCore.framework/Headers/JavaScriptCore.h"/>
     <header-file src="lib/ios/JavaScriptCore.framework/Headers/WebKitAvailability.h"/>
-    <source-file framework="true" src="lib/ios/JavaScriptCore.framework/JavaScriptCore.a"/>
-    <source-file framework="true" src="lib/ios/libCBLJSViewCompiler.a"/>
   </platform>
   <platform name="android">
     <config-file target="res/xml/config.xml" parent="/*">
