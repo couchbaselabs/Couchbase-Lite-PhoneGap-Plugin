@@ -35,3 +35,4 @@ There's an [example chat app with PhoneGap](https://github.com/couchbaselabs/Cou
 
 If you made it this far, you are now ready to build your custom PhoneGap App by editing the HTML, CSS, and Javascript files under the www directory.  Your same application code will work on both the iOS and Android platforms!
 
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/6c4d5c48d78a787fd11642029c32bb88 "githalytics.com")](http://githalytics.com/couchbaselabs/Couchbase-Lite-PhoneGap-Plugin)
