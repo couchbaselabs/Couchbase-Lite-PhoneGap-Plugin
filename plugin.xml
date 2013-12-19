@@ -63,7 +63,7 @@
         <param name="onload" value="true"/>
       </feature>
     </config-file>
-    <source-file src="src/android/CBLite.java" target-dir="src/com/couchbase/cblite/plugins"/>
+    <source-file src="src/android/CBLite.java" target-dir="src/com/couchbase/cblite/phonegap"/>
     <source-file src="lib/android/CBLite-1.0.0-beta.jar" target-dir="libs"/>
     <source-file src="lib/android/CBLiteJavascript-1.0.0-beta.jar" target-dir="libs"/>
     <source-file src="lib/android/CBLiteListener-1.0.0-beta.jar" target-dir="libs"/>
