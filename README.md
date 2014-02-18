@@ -45,6 +45,12 @@ This repo is a git mirror of the [zip file produced by this Jenkins job](http://
 11. Publish the new branch with `git push origin master`
 12. Visit this repo on the github website and adjust the settings to make `master` into the Default Branch again.
 
+### Publishing to Cordova
+
+    npm install -g plugman
+
+From inside the package directory `plugman adduser` and `plugman publish .`
+
 # Where to go from here
 
 There's an [example chat app with PhoneGap](https://github.com/couchbaselabs/CouchChat-PhoneGap) that illustrates the channel sync API. You can [read more about the app here](https://github.com/couchbaselabs/CouchChat-PhoneGap).
