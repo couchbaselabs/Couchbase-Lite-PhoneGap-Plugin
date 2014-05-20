@@ -187,42 +187,19 @@ typedef BOOL (^CBLFilterBlock) (CBLSavedRevision* revision, NSDictionary* params
 
 #pragma mark - REPLICATION:
 
-/** Returns an array of all current CBLReplications involving this database. */
+/** Returns an array of all current, running CBLReplications involving this database. */
 - (NSArray*) allReplications;
 
-/** Creates a replication that will 'push' to a database at the given URL, or returns an existing
-    such replication if there already is one.
-    It will initially be non-persistent; set its .persistent property to YES to make it persist. */
-- (CBLReplication*) replicationToURL: (NSURL*)url;
+/** Creates a replication that will 'push' this database to a remote database at the given URL.
+    This always creates a new replication, even if there is already one to the given URL.
+    You must call -start on the replication to start it. */
+- (CBLReplication*) createPushReplication: (NSURL*)url;
 
-/** Creates a replication that will 'pull' from a database at the given URL, or returns an existing
-    such replication if there already is one.
-    It will initially be non-persistent; set its .persistent property to YES to make it persist. */
-- (CBLReplication*) replicationFromURL: (NSURL*)url;
+/** Creates a replication that will 'pull' from a remote database at the given URL to this database.
+    This always creates a new replication, even if there is already one from the given URL.
+    You must call -start on the replication to start it. */
+- (CBLReplication*) createPullReplication: (NSURL*)url;
 
-/** Creates a pair of replications to both pull and push to database at the given URL, or returns existing replications if there are any.
-    @param otherDbURL  The URL of the remote database, or nil for none.
-    @param exclusively  If YES, any previously existing replications to or from otherDbURL will be deleted.
-    @return  An array whose first element is the "pull" replication and second is the "push".
-    It will initially be non-persistent; set its .persistent property to YES to make it persist. */
-- (NSArray*) replicationsWithURL: (NSURL*)otherDbURL exclusively: (bool)exclusively;
-
-
-#ifdef CBL_DEPRECATED
-- (CBLDocument*) untitledDocument __attribute__((deprecated("renamed -createDocument")));
-- (CBLDocument*) cachedDocumentWithID: (NSString*)docID __attribute__((deprecated("you shouldn't need to use this")));
-- (void) clearDocumentCache __attribute__((deprecated("you shouldn't need to use this")));
-- (NSDictionary*) getLocalDocumentWithID: (NSString*)localDocID __attribute__((deprecated("renamed -existingLocalDocumentWithID:")));
-- (CBLQuery*) queryAllDocuments __attribute__((deprecated("renamed -createAllDocumentsQuery")));
-- (void) defineFilter: (NSString*)filterName asBlock: (CBLFilterBlock)filterBlock __attribute__((deprecated("renamed -setFilterNamed:asBlock:")));
-- (void) defineValidation: (NSString*)validationName asBlock: (CBLValidationBlock)validationBlock __attribute__((deprecated("renamed -setValidationNamed:asBlock:")));
-- (CBLReplication*) pushToURL: (NSURL*)url
-        __attribute__((deprecated("use replicationToURL, then call -start")));
-- (CBLReplication*) pullFromURL: (NSURL*)url
-        __attribute__((deprecated("use replicationFromURL, then call -start")));
-- (NSArray*) replicateWithURL: (NSURL*)otherDbURL exclusively: (bool)exclusively
-        __attribute__((deprecated("use replicationsWithURL:, then call -start")));
-#endif
 
 @end
 
@@ -267,9 +244,4 @@ typedef BOOL (^CBLChangeEnumeratorBlock) (NSString* key, id oldValue, id newValu
     NO; else the method returns YES. */
 - (BOOL) validateChanges: (CBLChangeEnumeratorBlock)enumerator;
 
-#ifdef CBL_DEPRECATED
-- (BOOL) allowChangesOnlyTo: (NSArray*)allowedKeys __attribute__((deprecated()));
-- (BOOL) disallowChangesTo: (NSArray*)disallowedKeys __attribute__((deprecated()));
-- (BOOL) enumerateChanges: (CBLChangeEnumeratorBlock)enumerator __attribute__((deprecated("renamed validateChanges:")));
-#endif
 @end

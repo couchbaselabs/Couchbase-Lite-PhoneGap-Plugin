@@ -47,3 +47,22 @@
 + (IMP) impForSetterOfProperty: (NSString*)property ofType: (const char*)propertyType;
 
 @end
+
+/** Given an Objective-C class object, a property name, and a BOOL for whether the property should be readwrite,
+    return YES if a property with the name exists , NO otherwise.
+    If setter argument is YES but property is declared readonly, also returns NO.
+    Information about the property is returned by reference: the subclass of cls that declares the property, 
+    and the property string part of the property attributes string.
+ */
+BOOL MYGetPropertyInfo(Class cls,
+                       NSString *propertyName,
+                       BOOL setter,
+                       Class *declaredInClass,
+                       const char* *propertyType);
+
+
+/** Given an Objective-C property type string, returns the property type as a Class object, 
+    or nil if a class does not apply or no such property is present.
+    See Property Type String section of the Objective-C Runtime Programming Guide 
+    for more information about the format of the string. */
+Class MYClassFromType(const char* propertyType);

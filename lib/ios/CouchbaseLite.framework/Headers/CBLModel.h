@@ -67,6 +67,9 @@
     This is what will be written to the CBLDocument when the model is saved. */
 - (NSDictionary*) propertiesToSave;
 
+/** Removes any changes made to properties and attachments since the last save. */
+- (void) revertChanges;
+
 /** Deletes the document from the database. 
     You can still use the model object afterwards, but it will refer to the deleted revision. */
 - (BOOL) deleteDocument: (NSError**)outError;
@@ -157,6 +160,14 @@
     You don't normally need to call this, since property setters call it for you. One case where you'd need to call it is if you want to manage mutable state in your own properties and not store the changes into dynamic properties until it's time to save. In that case you should also override -propertiesToSave and update the dynamic properties accordingly before chaining to the superclass method. */
 - (void) markNeedsSave;
 
+/** Called while saving a document, before building the new revision's dictionary.
+    This method can modify property values if it wants to. */
+- (void) willSave: (NSSet*)changedPropertyNames;
+
+/** If you want properties to be saved in the document when it's deleted (in addition to the required "_deleted":true) override this method to return those properties.
+    This is called by -deleteDocument:. The default implementation returns {"_deleted":true}. */
+- (NSDictionary*) propertiesToSaveForDeletion;
+
 /** General method for declaring the class of items in a property of type NSArray*.
     Given the property name, the override should return a class that all items must inherit from,
     or nil if the property is untyped. Supported classes are CBLModel (or any subclass),
@@ -171,14 +182,6 @@
     than overriding this one. */
 + (Class) itemClassForArrayProperty: (NSString*)property;
 
-#ifdef CBL_DEPRECATED
-/** Creates or updates an attachment (in memory).
-    The attachment data will be written to the database at the same time as property changes are saved.
-    @param attachment  A newly-created CBLAttachment (not yet associated with any revision)
-    @param name  The attachment name. */
-- (void) addAttachment: (CBLAttachment*)attachment
-                 named: (NSString*)name __attribute__((deprecated("use setAttachmentNamed: instead")));
-#endif
 @end
 
 
