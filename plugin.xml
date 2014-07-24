@@ -26,20 +26,11 @@
     <framework src="Security.framework"/>
     <framework src="CFNetwork.framework"/>
     <framework src="SystemConfiguration.framework"/>
+    <framework src="JavaScriptCore.framework"/>
     <header-file src="lib/ios/CBLRegisterJSViewCompiler.h"/>
     <source-file framework="true" src="lib/ios/libCBLJSViewCompiler.a"/>
-    <source-file framework="true" src="lib/ios/JavaScriptCore.framework/JavaScriptCore.a"/>
     <source-file framework="true" src="lib/ios/CouchbaseLite.framework/CouchbaseLite.a"/>
     <source-file framework="true" src="lib/ios/CouchbaseLiteListener.framework/CouchbaseLiteListener.a"/>
-    <header-file src="lib/ios/JavaScriptCore.framework/Headers/JSBase.h"/>
-    <header-file src="lib/ios/JavaScriptCore.framework/Headers/JSContextRef.h"/>
-    <header-file src="lib/ios/JavaScriptCore.framework/Headers/JSObjectRef.h"/>
-    <header-file src="lib/ios/JavaScriptCore.framework/Headers/JSStringRef.h"/>
-    <header-file src="lib/ios/JavaScriptCore.framework/Headers/JSStringRefCF.h"/>
-    <header-file src="lib/ios/JavaScriptCore.framework/Headers/JSValueRef.h"/>
-    <header-file src="lib/ios/JavaScriptCore.framework/Headers/JavaScript.h"/>
-    <header-file src="lib/ios/JavaScriptCore.framework/Headers/JavaScriptCore.h"/>
-    <header-file src="lib/ios/JavaScriptCore.framework/Headers/WebKitAvailability.h"/>
     <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLAttachment.h"/>
     <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLAuthenticator.h"/>
     <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLDatabase.h"/>
