@@ -32,6 +32,13 @@
     NSLog(@"Launching Couchbase Lite...");
     CBLManager* dbmgr = [CBLManager sharedInstance];
     CBLRegisterJSViewCompiler();
+#if 1
+    // Couchbase Lite 1.0's CBLRegisterJSViewCompiler function doesn't register the filter compiler
+    if ([CBLDatabase filterCompiler] == nil) {
+        Class cblJSFilterCompiler = NSClassFromString(@"CBLJSFilterCompiler");
+        [CBLDatabase setFilterCompiler: [[cblJSFilterCompiler alloc] init]];
+    }
+#endif
     self.liteURL = dbmgr.internalURL;
     NSLog(@"Couchbase Lite url = %@", self.liteURL);
 }
