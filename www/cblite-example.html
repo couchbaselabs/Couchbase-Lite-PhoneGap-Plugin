@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Cordova</title>
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script type="text/javascript" charset="utf-8">
+
+    // Call onDeviceReady when PhoneGap is loaded.
+    //
+    // At this point, the document has loaded but phonegap.js has not.
+    // When PhoneGap is loaded and talking with the native device,
+    // it will call the event `deviceready`.
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
+    function onDeviceReady() {
+        // Now safe to use the PhoneGap API
+        logMessage("onDeviceReady() called, getting Couchbase Lite URL")
+        if (window.cblite) {
+            window.cblite.getURL(function(err, url) {
+                if (err) {
+                    logMessage("error launching Couchbase Lite: " + err)
+                } else {
+                    logMessage("Couchbase Lite running at " + url);
+                }
+            });
+        } else {
+            logMessage("error, Couchbase Lite plugin not found.")
+        }
+    }
+
+    function logMessage(message) {
+        var p = document.createElement("p");
+        p.innerHTML = message;
+        document.body.appendChild(p)
+        console.log(message)
+    }
+
+</script>
+
+
+</head>
+<body>
+<h1>Hello Couchbase Lite</h1>
+
+</body>
+</html>
