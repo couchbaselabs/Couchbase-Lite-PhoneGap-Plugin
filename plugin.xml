@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="com.couchbase.lite.phonegap" version="0.3.0">
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="com.couchbase.lite.phonegap" version="1.0.2">
   <name>Couchbase Lite</name>
   <description>Install Couchbase Lite in your app to enable JSON sync.</description>
   <license>Apache 2.0</license>
@@ -29,8 +29,8 @@
     <header-file src="lib/ios/CBLRegisterJSViewCompiler.h"/>
     <source-file framework="true" src="lib/ios/libCBLJSViewCompiler.a"/>
     <source-file framework="true" src="lib/ios/CouchbaseLite.framework/CouchbaseLite.a"/>
-    <source-file framework="true" src="lib/ios/CouchbaseLiteListener.framework/CouchbaseLiteListener.a"/>
     <source-file framework="true" src="lib/ios/JavaScriptCore.framework/JavaScriptCore.a"/>
+    <source-file framework="true" src="lib/ios/CouchbaseLiteListener.framework/CouchbaseLiteListener.a"/>
     <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLAttachment.h"/>
     <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLAuthenticator.h"/>
     <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLDatabase.h"/>
@@ -50,7 +50,6 @@
     <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLView.h"/>
     <header-file src="lib/ios/CouchbaseLite.framework/Headers/CouchbaseLite.h"/>
     <header-file src="lib/ios/CouchbaseLite.framework/Headers/MYDynamicObject.h"/>
-    <header-file src="lib/ios/CouchbaseLiteListener.framework/Headers/CBLListener.h"/>
     <header-file src="lib/ios/JavaScriptCore.framework/Headers/JSBase.h"/>
     <header-file src="lib/ios/JavaScriptCore.framework/Headers/JSContextRef.h"/>
     <header-file src="lib/ios/JavaScriptCore.framework/Headers/JSObjectRef.h"/>
@@ -60,6 +59,7 @@
     <header-file src="lib/ios/JavaScriptCore.framework/Headers/JavaScript.h"/>
     <header-file src="lib/ios/JavaScriptCore.framework/Headers/JavaScriptCore.h"/>
     <header-file src="lib/ios/JavaScriptCore.framework/Headers/WebKitAvailability.h"/>
+    <header-file src="lib/ios/CouchbaseLiteListener.framework/Headers/CBLListener.h"/>
   </platform>
   <platform name="android">
     <config-file target="res/xml/config.xml" parent="/*">
@@ -69,12 +69,12 @@
       </feature>
     </config-file>
     <source-file src="src/android/CBLite.java" target-dir="src/com/couchbase/cblite/phonegap"/>
-    <source-file src="lib/android/cbl_collator_so-1.0.1.jar" target-dir="libs"/>
     <source-file src="lib/android/commons-io-2.0.1.jar" target-dir="libs"/>
-    <source-file src="lib/android/couchbase-lite-android-1.0.1.jar" target-dir="libs"/>
-    <source-file src="lib/android/couchbase-lite-java-core-1.0.1.jar" target-dir="libs"/>
-    <source-file src="lib/android/couchbase-lite-java-javascript-1.0.1.jar" target-dir="libs"/>
-    <source-file src="lib/android/couchbase-lite-java-listener-1.0.1.jar" target-dir="libs"/>
+    <source-file src="lib/android/couchbase-lite-android-1.0.2.jar" target-dir="libs"/>
+    <source-file src="lib/android/cbl_collator_so-1.0.2.jar" target-dir="libs"/>
+    <source-file src="lib/android/couchbase-lite-java-core-1.0.2.jar" target-dir="libs"/>
+    <source-file src="lib/android/couchbase-lite-java-javascript-1.0.2.jar" target-dir="libs"/>
+    <source-file src="lib/android/couchbase-lite-java-listener-1.0.2.jar" target-dir="libs"/>
     <source-file src="lib/android/jackson-core-asl-1.9.2.jar" target-dir="libs"/>
     <source-file src="lib/android/jackson-mapper-asl-1.9.2.jar" target-dir="libs"/>
     <source-file src="lib/android/rhino-1.7R3.jar" target-dir="libs"/>
