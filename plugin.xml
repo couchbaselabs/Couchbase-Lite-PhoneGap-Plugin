@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="com.couchbase.lite.phonegap" version="1.0.4">
+  <name>Couchbase Lite</name>
+  <description>Install Couchbase Lite in your app to enable JSON sync.</description>
+  <license>Apache 2.0</license>
+  <js-module src="www/cblite.js" name="CouchbaseLite">
+    <clobbers target="window.cblite"/>
+  </js-module>
+  <asset src="www/cblite-example.html" target="cblite-example.html"/>
+  <engines>
+    <engine name="cordova" version=">=3.0.0"/>
+  </engines>
+  <platform name="ios">
+    <config-file target="config.xml" parent="/widget">
+      <feature name="CBLite">
+        <param name="ios-package" value="CBLite"/>
+        <param name="onload" value="true"/>
+      </feature>
+    </config-file>
+    <header-file src="src/ios/CBLite.h"/>
+    <source-file src="src/ios/CBLite.m"/>
+    <framework src="libsqlite3.dylib"/>
+    <framework src="libstdc++.dylib"/>
+    <framework src="libicucore.dylib"/>
+    <framework src="libz.dylib"/>
+    <framework src="Security.framework"/>
+    <framework src="CFNetwork.framework"/>
+    <framework src="SystemConfiguration.framework"/>
+    <framework src="JavaScriptCore.framework"/>
+    <header-file src="lib/ios/CBLRegisterJSViewCompiler.h"/>
+    <source-file framework="true" src="lib/ios/libCBLJSViewCompiler.a"/>
+    <source-file framework="true" src="lib/ios/CouchbaseLite.framework/CouchbaseLite.a"/>
+    <source-file framework="true" src="lib/ios/CouchbaseLiteListener.framework/CouchbaseLiteListener.a"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLAttachment.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLAuthenticator.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLDatabase.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLDatabaseChange.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLDocument.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLGeometry.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLJSON.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLManager.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLModel.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLModelFactory.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLQuery+FullTextSearch.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLQuery+Geo.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLQuery.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLReplication.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLRevision.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLUITableSource.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLView.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CouchbaseLite.h"/>
+    <header-file src="lib/ios/CouchbaseLite.framework/Headers/MYDynamicObject.h"/>
+    <header-file src="lib/ios/CouchbaseLiteListener.framework/Headers/CBLListener.h"/>
+  </platform>
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="CBLite">
+        <param name="android-package" value="com.couchbase.cblite.phonegap.CBLite"/>
+        <param name="onload" value="true"/>
+      </feature>
+    </config-file>
+    <source-file src="src/android/CBLite.java" target-dir="src/com/couchbase/cblite/phonegap"/>
+    <source-file src="lib/android/cbl_collator_so-1.0.4.jar" target-dir="libs"/>
+    <source-file src="lib/android/commons-io-2.0.1.jar" target-dir="libs"/>
+    <source-file src="lib/android/couchbase-lite-android-1.0.4.jar" target-dir="libs"/>
+    <source-file src="lib/android/couchbase-lite-java-core-1.0.4.jar" target-dir="libs"/>
+    <source-file src="lib/android/couchbase-lite-java-javascript-1.0.4.jar" target-dir="libs"/>
+    <source-file src="lib/android/couchbase-lite-java-listener-1.0.4.jar" target-dir="libs"/>
+    <source-file src="lib/android/jackson-core-asl-1.9.2.jar" target-dir="libs"/>
+    <source-file src="lib/android/jackson-mapper-asl-1.9.2.jar" target-dir="libs"/>
+    <source-file src="lib/android/rhino-1.7R3.jar" target-dir="libs"/>
+    <source-file src="lib/android/servlet-2-3.jar" target-dir="libs"/>
+    <source-file src="lib/android/stateless4j-2.4.0.jar" target-dir="libs"/>
+    <source-file src="lib/android/webserver-2-3.jar" target-dir="libs"/>
+  </platform>
+</plugin>
