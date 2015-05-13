@@ -72,5 +72,7 @@
     <source-file src="lib/android/servlet-2-3.jar" target-dir="libs"/>
     <source-file src="lib/android/stateless4j-2.4.0.jar" target-dir="libs"/>
     <source-file src="lib/android/webserver-2-3.jar" target-dir="libs"/>
+
+    <framework src="src/android/cblite.gradle" custom="true" type="gradleReference" />
   </platform>
 </plugin>
