@@ -18,7 +18,7 @@ phonegap local plugin add https://github.com/couchbaselabs/Couchbase-Lite-PhoneG
 phonegap run $PLATFORM
 ```
 
-Congrats, you got to hello world. If you want to try a full example app, [follow the instructions for 5 minutes to awesome](http://docs.couchbase.com/couchbase-lite/cbl-phonegap/#getting-started-in-5-minutes)
+Congrats, you got to hello world. If you want to try a full example app, [follow the instructions for 5 minutes to awesome](http://developer.couchbase.com/documentation/mobile/1.1.0/get-started/get-started-mobile/phonegap/index.html)
 
 ## Architecture
 
