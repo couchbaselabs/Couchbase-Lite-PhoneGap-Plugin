@@ -1,7 +1,7 @@
 #import "CBLite.h"
 
-#import "CouchbaseLite.h"
-#import "CBLListener.h"
+#import <CouchbaseLite/CouchbaseLite.h>
+#import <CouchbaseLiteListener/CBLListener.h>
 #import "CBLRegisterJSViewCompiler.h"
 
 #import <Cordova/CDV.h>

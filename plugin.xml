@@ -19,6 +19,7 @@
     </config-file>
     <header-file src="src/ios/CBLite.h"/>
     <source-file src="src/ios/CBLite.m"/>
+    <header-file src="lib/ios/CBLRegisterJSViewCompiler.h"/>
     <framework src="libsqlite3.dylib"/>
     <framework src="libstdc++.dylib"/>
     <framework src="libicucore.dylib"/>
@@ -27,34 +28,9 @@
     <framework src="CFNetwork.framework"/>
     <framework src="SystemConfiguration.framework"/>
     <framework src="JavaScriptCore.framework"/>
-    <header-file src="lib/ios/CBLRegisterJSViewCompiler.h"/>
+    <framework src="lib/ios/CouchbaseLite.framework" custom="true" />
+    <framework src="lib/ios/CouchbaseLiteListener.framework" custom="true" />
     <source-file framework="true" src="lib/ios/libCBLJSViewCompiler.a"/>
-    <source-file framework="true" src="lib/ios/CouchbaseLite.framework/CouchbaseLite.a"/>
-    <source-file framework="true" src="lib/ios/CouchbaseLiteListener.framework/CouchbaseLiteListener.a"/>
-    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLAttachment.h"/>
-    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLAuthenticator+OpenID.h"/>
-    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLAuthenticator.h"/>
-    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLBase.h"/>
-    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLDatabase.h"/>
-    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLDatabaseChange.h"/>
-    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLDocument.h"/>
-    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLDynamicObject.h"/>
-    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLGeometry.h"/>
-    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLJSON.h"/>
-    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLManager.h"/>
-    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLModel.h"/>
-    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLModelFactory.h"/>
-    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLQuery+FullTextSearch.h"/>
-    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLQuery+Geo.h"/>
-    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLQuery.h"/>
-    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLQueryBuilder.h"/>
-    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLReplication.h"/>
-    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLRevision.h"/>
-    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLUITableSource.h"/>
-    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CBLView.h"/>
-    <header-file src="lib/ios/CouchbaseLite.framework/Headers/CouchbaseLite.h"/>
-    <header-file src="lib/ios/CouchbaseLiteListener.framework/Headers/CBLListener.h"/>
-    <header-file src="lib/ios/CouchbaseLiteListener.framework/Headers/CouchbaseLiteListener.h"/>
   </platform>
   <platform name="android">
     <config-file target="res/xml/config.xml" parent="/*">
