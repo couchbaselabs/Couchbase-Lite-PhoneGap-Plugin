@@ -29,6 +29,7 @@ public class CBLite extends CordovaPlugin {
 	private boolean initFailed = false;
 	private int listenPort;
     private Credentials allowedCredentials;
+	private LiteListener listener;
 
 	/**
 	 * Constructor.
@@ -103,7 +104,7 @@ public class CBLite extends CordovaPlugin {
 	protected Manager startCBLite(Context context) {
 		Manager manager;
 		try {
-		        Manager.enableLogging(Log.TAG, Log.VERBOSE);
+		    Manager.enableLogging(Log.TAG, Log.VERBOSE);
 			Manager.enableLogging(Log.TAG_SYNC, Log.VERBOSE);
 			Manager.enableLogging(Log.TAG_QUERY, Log.VERBOSE);
 			Manager.enableLogging(Log.TAG_VIEW, Log.VERBOSE);
@@ -124,7 +125,7 @@ public class CBLite extends CordovaPlugin {
 
 	private int startCBLListener(int listenPort, Manager manager, Credentials allowedCredentials) {
 
-		LiteListener listener = new LiteListener(manager, listenPort, allowedCredentials);
+		listener = new LiteListener(manager, listenPort, allowedCredentials);
 		int boundPort = listener.getListenPort();
 		Thread thread = new Thread(listener);
 		thread.start();
@@ -140,5 +141,9 @@ public class CBLite extends CordovaPlugin {
 		System.out.println("CBLite.onPause() called");
 	}
 
+	public void onDestroy() {
+		System.out.println("CBLite.onDestroy() called");
+		listener.stop();
+	}
 
 }
