@@ -26,6 +26,7 @@
     }
   ],
   "author": "Couchbase",
+  "license": "Apache 2.0",
   "bugs": {
     "url": "https://forums.couchbase.com/c/mobile/couchbase-lite"
   },
