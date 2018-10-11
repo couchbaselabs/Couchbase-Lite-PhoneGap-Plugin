@@ -1,6 +1,6 @@
 {
   "name": "couchbase-lite-phonegap-plugin",
-  "version": "1.4.1",
+  "version": "1.4.4",
   "description": "Install Couchbase Lite in your app to enable JSON sync",
   "cordova": {
     "id": "com.couchbase.lite.phonegap",
