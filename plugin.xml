@@ -66,8 +66,8 @@
     <framework src="src/android/build.gradle" custom="true" type="gradleReference"/>
     <source-file src="src/android/CBLite.java" target-dir="src/com/couchbase/cblite/phonegap"/>
     <source-file src="lib/android/commons-io-2.0.1.jar" target-dir="libs"/>
-    <source-file src="lib/android/couchbase-lite-android-1.4.4.aar" target="libs/couchbase-lite-android-1.4.4.aar"/>
-    <source-file src="lib/android/couchbase-lite-android-sqlite-custom-1.4.4.aar" target="libs/couchbase-lite-android-sqlite-custom-1.4.4.aar"/>
+    <source-file src="lib/android/couchbase-lite-android-1.4.4.aar" target="libs/couchbase-lite-android-1.4.4.aar" framework="true"/>
+    <source-file src="lib/android/couchbase-lite-android-sqlite-custom-1.4.4.aar" target="libs/couchbase-lite-android-sqlite-custom-1.4.4.aar" framework="true"/>
     <source-file src="lib/android/couchbase-lite-java-core-1.4.4.jar" target-dir="libs"/>
     <source-file src="lib/android/couchbase-lite-java-javascript-1.4.4.jar" target-dir="libs"/>
     <source-file src="lib/android/couchbase-lite-java-listener-1.4.4.jar" target-dir="libs"/>
