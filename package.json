@@ -1,34 +1,34 @@
 {
-  "name": "couchbase-lite-phonegap-plugin",
-  "version": "1.4.1",
-  "description": "Install Couchbase Lite in your app to enable JSON sync",
-  "cordova": {
-    "id": "com.couchbase.lite.phonegap",
-    "platforms": [
-      "ios",
-      "android"
-    ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/couchbaselabs/Couchbase-Lite-PhoneGap-Plugin.git"
-  },
-  "keywords": [
-    "couchbase",
-    "couchbase-lite-phonegap",
-    "couchbase-lite",
-    "cordova"
-  ],
-  "engines": [
-    {
-      "name": "cordova",
-      "version": ">=3.0.0"
-    }
-  ],
-  "author": "Couchbase",
-  "license": "Apache 2.0",
-  "bugs": {
-    "url": "https://forums.couchbase.com/c/mobile/couchbase-lite"
-  },
-  "homepage": "https://github.com/couchbaselabs/Couchbase-Lite-PhoneGap-Plugin"
-}
+    "name": "couchbase-lite-phonegap-plugin",
+    "version": "1.4.4",
+    "description": "Install Couchbase Lite in your app to enable JSON sync",
+    "cordova": {
+      "id": "com.couchbase.lite.phonegap",
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/couchbaselabs/Couchbase-Lite-PhoneGap-Plugin.git"
+    },
+    "keywords": [
+      "couchbase",
+      "couchbase-lite-phonegap",
+      "couchbase-lite",
+      "cordova"
+    ],
+    "engines": [
+      {
+        "name": "cordova",
+        "version": ">=3.0.0"
+      }
+    ],
+    "author": "Couchbase",
+    "license": "Apache 2.0",
+    "bugs": {
+      "url": "https://forums.couchbase.com/c/mobile/couchbase-lite"
+    },
+    "homepage": "https://github.com/couchbaselabs/Couchbase-Lite-PhoneGap-Plugin"
+  }
