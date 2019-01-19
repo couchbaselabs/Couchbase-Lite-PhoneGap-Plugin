@@ -1,13 +1,22 @@
 repositories{    
   jcenter()
-  flatDir {
-      dirs 'libs'
-   }
 }
 
-dependencies {
-   compile(name:'couchbase-lite-android-1.4.4', ext:'aar')
-   compile(name:'couchbase-lite-android-sqlite-custom-1.4.4', ext:'aar')
+dependencies {  
+  compile group: 'commons-io', name: 'commons-io', version:'2.0.1'
+  compile group: 'com.couchbase.lite', name:'couchbase-lite-java-javascript', version:'1.4.4'
+  compile group: 'com.couchbase.lite', name:'couchbase-lite-android', version:'1.4.4'
+  compile group: 'com.couchbase.lite', name:'couchbase-lite-android-sqlite-custom', version:'1.4.4'
+  compile group: 'com.couchbase.lite', name:'couchbase-lite-java-core', version:'1.4.4'
+  compile group: 'com.couchbase.lite', name:'couchbase-lite-java-listener', version:'1.4.4'
+  compile group: 'com.fasterxml.jackson.core', name:'jackson-annotations', version:'2.5.0'
+  compile group: 'com.fasterxml.jackson.core', name:'jackson-databind', version:'2.5.0'
+  compile group: 'com.fasterxml.jackson.core', name:'jackson-core', version:'2.5.0'
+  compile group: 'com.squareup.okhttp3', name:'okhttp', version:'3.11.0'
+  compile group: 'com.squareup.okio', name:'okio', version:'1.8.0'
+  compile group: 'org.mozilla', name:'rhino', version:'1.7.10'
+  provided group: 'javax.servlet', name: 'servlet-api', version: '2.3'
+  compile group: 'com.github.oxo42', name: 'stateless4j', version: '2.4.0'
 }
 
 android {
