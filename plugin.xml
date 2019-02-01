@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="com-couchbase-lite-phonegap" version="1.4.4-1">
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="couchbase-lite-phonegap-plugin" version="1.4.4-1">
   <name>Couchbase Lite</name>
   <description>Install Couchbase Lite in your app to enable JSON sync.</description>
   <license>Apache 2.0</license>
