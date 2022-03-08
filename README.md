@@ -1,3 +1,5 @@
+:warning: This repo is obsolete.  It is no longer maintained and based on a version of Couchbase Lite that reached end of life years ago.
+
 # PhoneGap plugin for Couchbase Lite
 
 Couchbase Lite is an embedded JSON database for occasionally connected devices. It syncs data in the background, so users can collaborate across devices. There is an event based `_changes` JSON feed API so you can drive data-binding UI frameworks like Sencha and Backbone to reflect remote updates interactively.
